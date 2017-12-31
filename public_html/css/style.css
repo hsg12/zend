@@ -45,3 +45,7 @@ div.container a.navbar-brand > img {
     height: 80px; /* Set the fixed height of the footer here */
     line-height: 2; /* Vertically center the text there */
 }
+
+.home-active {
+    color: #18BC9C !important;
+}

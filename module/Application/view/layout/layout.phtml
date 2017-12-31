@@ -26,16 +26,16 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="<?= $this->url('home') ?>">SiteName</a>
+                <a class="navbar-brand <?php if ($this->headTitle()->renderTitle() === 'Home') { echo 'home-active'; } ?>"
+                   href="<?= $this->url('home') ?>"
+                >
+                    SiteName
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor03">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('home') ?>">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
+                    <?= $this->navigation('top_navigation')->menu()->setUlClass("navbar-nav mr-auto")->render() ?>
                 </div>
             </div>
         </nav>
