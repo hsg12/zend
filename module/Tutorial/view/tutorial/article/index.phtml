@@ -1,0 +1,20 @@
+<!-- In order to do top navigation link active -->
+<?= $this->headScript()->prependScript('$(function(){$("ul.navbar-nav.mr-auto li").eq(0).addClass("active");});'); ?>
+<?php
+$headTitle = 'Article';
+$this->headTitle($headTitle);
+?>
+<div class="row">
+    <div class="col-sm-6">
+        <h3><?= $this->escapeHtml($headTitle) ?></h3>
+    </div>
+    <div class="col-sm-6">
+        <div class="text-right"><a href="/tutorial/article/add" class="btn btn-dark">Add article</a></div>
+    </div>
+</div>
+<?= $this->partial('partial/flashMessage') ?>
+<hr>
+<div>
+    <a href="/tutorial/article/edit/14" class="btn btn-dark">Edit article</a>
+</div>
+

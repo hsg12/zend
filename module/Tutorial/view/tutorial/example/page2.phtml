@@ -1,0 +1,11 @@
+<!-- In order to do top navigation link active -->
+<?= $this->headScript()->prependScript('$(function(){$("ul.navbar-nav.mr-auto li").eq(0).addClass("active");});'); ?>
+<?php
+$headTitle = 'Page 2';
+$this->headTitle($headTitle);
+?>
+<div class="row">
+    <div class="col-sm-12">
+        <h3><?= $this->escapeHtml($headTitle) ?></h3>
+    </div>
+</div>

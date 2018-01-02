@@ -1,7 +1,7 @@
 <!-- In order to do top navigation link active -->
 <?= $this->headScript()->prependScript('$(function(){$("ul.navbar-nav.mr-auto li").eq(0).addClass("active");});'); ?>
 <?php
-$headTitle = 'Example';
+$headTitle = 'Add article';
 $this->headTitle($headTitle);
 ?>
 <div class="row">
@@ -9,12 +9,9 @@ $this->headTitle($headTitle);
         <h3><?= $this->escapeHtml($headTitle) ?></h3>
     </div>
 </div>
-<?= $this->partial('partial/flashMessage') ?>
-<form action="/tutorial/example" method="post" class="form-inline">
-    <div class="form-group">
+<div>
+    <form action="/tutorial/article/add" method="post" class="form-inline">
         <input type="text" name="title" class="form-control">
-    </div>
-    <input type="submit" value="Submit" class="btn btn-info">
-</form>
-<br>
-<div><a href="/tutorial/example/sample" class="btn btn-dark">Sample</a></div>
+        <input type="submit" name="add_form" value="Submit" class="btn btn-info">
+    </form>
+</div>

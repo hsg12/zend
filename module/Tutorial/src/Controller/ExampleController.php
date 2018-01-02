@@ -34,7 +34,7 @@ class ExampleController extends AbstractActionController
         #$errorMessage = 'Error message';
         #$this->flashMessenger()->addErrorMessage($errorMessage);
 
-        //return $this->redirect()->toRoute('tutorial/example');
+        #return $this->redirect()->toRoute('tutorial/example');
 
         $data = '<p><a href="#">Hello</a></p>';
         $num = 'Hello';
@@ -49,5 +49,15 @@ class ExampleController extends AbstractActionController
         //$view->addChild($widget, 'widget');
         //$view->setTemplate('tutorial/example/exampleTemplate');
         return $view;
+    }
+
+    public function page1Action()
+    {
+        return new ViewModel();
+    }
+
+    public function page2Action()
+    {
+        return new ViewModel();
     }
 }
