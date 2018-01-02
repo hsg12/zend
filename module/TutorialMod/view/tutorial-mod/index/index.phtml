@@ -1,5 +1,5 @@
 <?php
-$headTitle = 'Home';
+$headTitle = 'Tutorial Mod';
 $this->headTitle($headTitle);
 ?>
 <div class="row">
@@ -7,4 +7,4 @@ $this->headTitle($headTitle);
         <h3><?= $this->escapeHtml($headTitle) ?></h3>
     </div>
 </div>
-<div><?= $this->getDateTime(true) ?></div>
+<div><?= $this->escapeHtml($this->greetingService) ?></div>

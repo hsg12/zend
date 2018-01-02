@@ -9,10 +9,8 @@ class GreetingServiceFactory implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $greetingService = new GreetingService();
-        $greetingService->setEventManager($container->get('EventManager'));
-
-        $greetingService->getEventManager()->attach(
+        $container->get('ModuleManager')->getEventManager()->getSharedManager()->attach(
+            'getGreetingIdentifier',
             'getGreeting',
             function ($e) use ($container) {
                 $params = $e->getParams();
@@ -20,6 +18,22 @@ class GreetingServiceFactory implements FactoryInterface
             },
             100
         );
+
+
+        $greetingService = new GreetingService();
+        $greetingService->setEventManager($container->get('EventManager'));
+
+        /*$greetingService->getEventManager()->attach(
+            'getGreeting',
+            function ($e) use ($container) {
+                $params = $e->getParams();
+                $container->get('someEventService')->onGetGreeting($params);
+            },
+            100
+        );*/
+
+        /*$greetingAggregate = $container->get('greetingAggregate');
+        $greetingAggregate->attach($greetingService->getEventManager());*/
         return $greetingService;
     }
 }

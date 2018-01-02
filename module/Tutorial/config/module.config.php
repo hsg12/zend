@@ -18,12 +18,29 @@ return [
                         'action'     => 'index',
                     ],
                 ],
+                'may_terminate' => true,
+                'child_routes'  => [
+                    'example' => [
+                        'type'    => Segment::class,
+                        'options' => [
+                            'route'       => '/example[/:action]',
+                            'constraints' => [
+                                'action' => '[a-z]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ExampleController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
     'controllers' => [
         'factories' => [
             //Controller\IndexController::class => InvokableFactory::class,
+            Controller\ExampleController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [

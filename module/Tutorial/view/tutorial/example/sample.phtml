@@ -1,0 +1,17 @@
+<!-- In order to do top navigation link active -->
+<?= $this->headScript()->prependScript('$(function(){$("ul.navbar-nav.mr-auto li").eq(0).addClass("active");});'); ?>
+<?php
+$headTitle = 'Sample';
+$this->headTitle($headTitle);
+?>
+<div class="row">
+    <div class="col-sm-12">
+        <h3><?= $this->escapeHtml($headTitle) ?></h3>
+    </div>
+</div>
+<?= $this->escapeHtml($this->url()) ?>
+<hr>
+<div><?= $this->data ?></div>
+<div><?= $this->num ?></div>
+<div><?= $this->widget ?></div>
+<div><a href="/tutorial/example" class="btn btn-dark">Back to example</a></div>

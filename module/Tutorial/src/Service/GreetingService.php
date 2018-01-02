@@ -17,6 +17,7 @@ class GreetingService implements GreetingServiceInterface
         $dt->setTimezone(new \DateTimeZone('America/New_York'));
         $hour = $dt->format('H');
 
+        $this->getEventManager()->setIdentifiers(['getGreetingIdentifier']);
         $this->getEventManager()->trigger('getGreeting', false, ['hour' => $hour]);
 
         /*$event = new Event();

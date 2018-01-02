@@ -1,0 +1,23 @@
+<!-- In order to do top navigation link active -->
+<?= $this->headScript()->prependScript('$(function(){$("ul.navbar-nav.mr-auto li").eq(0).addClass("active");});'); ?>
+<?php
+$headTitle = 'Example';
+$this->headTitle($headTitle);
+?>
+<div class="row">
+    <div class="col-sm-12">
+        <h3><?= $this->escapeHtml($headTitle) ?></h3>
+    </div>
+</div>
+<?php
+    echo $this->flashMessenger()->render('success', ['success-message']);
+    echo $this->flashMessenger()->render('error',   ['error-message']);
+?>
+<form action="/tutorial/example" method="post" class="form-inline">
+    <div class="form-group">
+        <input type="text" name="title" class="form-control">
+    </div>
+    <input type="submit" value="Submit" class="btn btn-info">
+</form>
+<br>
+<div><a href="/tutorial/example/sample" class="btn btn-dark">Sample</a></div>
