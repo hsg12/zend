@@ -7,3 +7,29 @@ $this->headTitle($headTitle);
         <h3><?= $this->escapeHtml($headTitle) ?></h3>
     </div>
 </div>
+<br>
+<br>
+<div>
+    <?php foreach ($this->articles as $article) : ?>
+
+    <div class="panel panel-group">
+        <div class="panel-heading">
+            <img src="<?= $this->escapeHtml($this->checkImage($article->getImage())) ?>"
+                 class="blog-image-thumbnail img-responsive float-left"
+            >
+            <h5 class="panel-title">
+                <a href="#"><?= $this->escapeHtml($article->getTitle()) ?></a>
+            </h5>
+        </div>
+        <div class="clearfix"></div>
+        <div class="panel-body">
+            <?= $this->escapeHtml($article->getShortContent()) ?>
+        </div>
+        <div class="panel-footer">
+            <div class="text-right"><a href="#">Read more</a></div>
+        </div>
+    </div>
+    <hr>
+
+    <?php endforeach; ?>
+</div>
