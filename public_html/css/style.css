@@ -32,6 +32,10 @@ body {
     background-color: #57a900;
 }
 
+a:hover, a:focus {
+    outline: none;
+}
+
 div.container a.navbar-brand > img {
     display: inline;
     margin-right: 4px;
@@ -72,4 +76,20 @@ div.container a.navbar-brand > img {
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     margin: 0 20px 10px 0;
+}
+
+.blog-image {
+    width: 240px;
+    height: 140px;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    margin: 0 20px 10px 0;
+}
+
+#back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
 }

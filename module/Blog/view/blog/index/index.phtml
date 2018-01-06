@@ -18,7 +18,9 @@ $this->headTitle($headTitle);
                  class="blog-image-thumbnail img-responsive float-left"
             >
             <h5 class="panel-title">
-                <a href="#"><?= $this->escapeHtml($article->getTitle()) ?></a>
+                <a href="<?= $this->url('blog', ['action' => 'article', 'id' => $article->getId()]) ?>">
+                    <?= $this->escapeHtml($article->getTitle()) ?>
+                </a>
             </h5>
         </div>
         <div class="clearfix"></div>
@@ -26,10 +28,24 @@ $this->headTitle($headTitle);
             <?= $this->escapeHtml($article->getShortContent()) ?>
         </div>
         <div class="panel-footer">
-            <div class="text-right"><a href="#">Read more</a></div>
+            <div class="text-right">
+                <a href="<?= $this->url('blog', ['action' => 'article', 'id' => $article->getId()]) ?>" class="btn btn-sm btn-dark">
+                    Read more
+                </a>
+            </div>
         </div>
     </div>
     <hr>
 
     <?php endforeach; ?>
 </div>
+<br>
+<br>
+<?php
+    echo $this->paginationControl(
+        $this->articles,
+        'sliding',
+        'partial/paginator',
+        ['route' => 'blog']
+    );
+?>

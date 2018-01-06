@@ -13,11 +13,14 @@
         <!-- Le styles -->
         <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
             ->prependStylesheet($this->basePath('css/style.css'))
+            ->prependStylesheet($this->basePath('css/fontawesome-all.min.css'))
             ->prependStylesheet($this->basePath('css/flatly-bootstrap.min.css'))
         ?>
 
         <!-- Scripts -->
         <?= $this->headScript()
+            ->prependFile($this->basePath('js/app-script.js'))
+            ->prependFile($this->basePath('js/fontawesome-all.min.js'))
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-3.2.1.min.js'))
             ->prependFile($this->basePath('js/popper.min.js'))
@@ -52,5 +55,17 @@
         </footer>
 
         <?= $this->inlineScript() ?>
+
+        <a id="back-to-top"
+            href="#"
+            class="btn btn-primary"
+            role="button"
+            data-toggle="tooltip"
+            data-placement="left">
+            <span class="far fa-arrow-alt-circle-up" style="font-size:1.5em;"></span>
+            <!--<span style="font-size:3em; color:#919aa1;">
+                <i class="far fa-arrow-alt-circle-up"></i>
+            </span>-->
+        </a>
     </body>
 </html>

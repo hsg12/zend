@@ -10,9 +10,14 @@ return [
     'router' => [
         'routes' => [
             'blog' => [
-                'type' => Literal::class,
+                'type' => Segment::class,
                 'options' => [
-                    'route'    => '/blog',
+                    'route'    => '/blog[/page/:page][/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-z]+',
+                        'id'     => '[0-9]+',
+                        'page'   => '[0-9]+',
+                    ],
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
