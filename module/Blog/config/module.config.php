@@ -39,4 +39,25 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'navigation' => [
+        'blog_breadcrumb' => [
+            'home' => [
+                'label' => 'Home',
+                'route' => 'home',
+                'pages' => [
+                    'blog' => [
+                        'label' => 'Blog',
+                        'route' => 'blog',
+                        'pages' => [
+                            'article' => [
+                                'label' => 'Article',
+                                'route' => 'blog',
+                                'action' => 'article',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
 ];
