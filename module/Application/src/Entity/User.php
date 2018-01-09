@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * User
  *
  * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="user_name_u_k", columns={"name"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Application\Entity\Repository\UserRepository")
  */
 class User
 {
@@ -47,7 +47,7 @@ class User
      *
      * @ORM\Column(name="role", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $role;
+    private $role = 'user';
 
     /**
      * @var \DateTime|null
@@ -55,6 +55,11 @@ class User
      * @ORM\Column(name="registration_date", type="datetime", precision=0, scale=0, nullable=true, unique=false)
      */
     private $registrationDate;
+
+    public function __construct()
+    {
+        $this->registrationDate = new \DateTime();
+    }
 
 
     /**
