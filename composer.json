@@ -27,7 +27,8 @@
         "zendframework/zend-navigation": "^2.8",
         "doctrine/doctrine-orm-module": "^1.0.9",
         "zendframework/zend-captcha": "^2.7",
-        "zendframework/zend-crypt": "^3.2"
+        "zendframework/zend-crypt": "^3.2",
+        "zendframework/zend-json": "^3.1"
     },
     "autoload": {
         "psr-4": {

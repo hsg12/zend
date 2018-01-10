@@ -136,6 +136,20 @@ return [
                         ],
                     ],
 
+                    'ajax' => [
+                        'type'    => Segment::class,
+                        'options' => [
+                            'route'       => '/ajax[/:action]',
+                            'constraints' => [
+                                'action' => '[a-z]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\AjaxController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+
                 ],
             ],
         ],
@@ -145,6 +159,7 @@ return [
             //Controller\IndexController::class => InvokableFactory::class,
             Controller\ExampleController::class => InvokableFactory::class,
             Controller\ArticleController::class => InvokableFactory::class,
+            Controller\AjaxController::class    => InvokableFactory::class,
         ],
     ],
     'view_manager' => [

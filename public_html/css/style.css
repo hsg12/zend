@@ -121,3 +121,7 @@ div.container a.navbar-brand > img {
     border-radius: 3px;
     height: 37px;
 }
+
+label {
+    margin-top: 6px;
+}
