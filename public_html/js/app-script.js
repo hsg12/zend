@@ -40,5 +40,14 @@ $(function () {
     }
 
     $('#ajax_form').on('submit', ajaxManage);
+
+    ///   For register for   //////////////////////////////
+
+    if ($(document).width() < 364) {
+        $('#form-register input[name="captcha[input]"]').css('marginTop', '10px');
+    }
+
+    //////////////////////
+
 });
 

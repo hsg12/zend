@@ -1,6 +1,4 @@
 <?php
-$this->headScript()->appendScript('$(function(){$("ul.nav.navbar-nav.navbar-right li").eq(0).addClass("active");})');
-
 $headTitle = 'Registration page';
 $this->headTitle($headTitle);
 
@@ -10,28 +8,7 @@ $form->setAttributes([
 ]);
 $form->prepare();
 
-$name = $form->get('name');
-$name->setLabel($name->getLabel() . ' *');
-$nameLabel = str_replace('*', '<strong class="label-star">*</strong>', $this->formLabel($name));
-
-$email = $form->get('email');
-$email->setLabel($email->getLabel() . ' *');
-$emailLabel = str_replace('*', '<strong class="label-star">*</strong>', $this->formLabel($email));
-
-$password = $form->get('password');
-$password->setLabel($password->getLabel() . ' *');
-$passwordLabel = str_replace('*', '<strong class="label-star">*</strong>', $this->formLabel($password));
-
-$confirmPassword = $form->get('confirmPassword');
-$confirmPassword->setLabel($confirmPassword->getLabel() . ' *');
-$confirmPasswordLabel = str_replace('*', '<strong class="label-star">*</strong>', $this->formLabel($confirmPassword));
-
-$captcha = $form->get('captcha');
-$captcha->setLabel($captcha->getLabel() . ' *');
-$captchaLabel = str_replace('*', '<strong class="label-star">*</strong>', $this->formLabel($captcha));
 ?>
-<br>
-<br>
 <div class="row">
     <div class="col-sm-12">
         <div class="well">
@@ -43,56 +20,56 @@ $captchaLabel = str_replace('*', '<strong class="label-star">*</strong>', $this-
                     echo $this->formHidden($form->get('csrf'));
                     echo $this->formElementErrors($form->get('csrf'));
                 ?>
-                <div class="form-group">
+                <div class="row form-group">
                     <div class="col-sm-3">
-                        <?= $nameLabel ?>
+                        <?= $this->formLabel($form->get('name')) ?>
                     </div>
                     <div class="col-sm-9">
-                        <?= $this->formText($name) ?>
-                        <?= $this->formElementErrors($name) ?>
+                        <?= $this->formText($form->get('name')) ?>
+                        <?= $this->formElementErrors($form->get('name')) ?>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <div class="col-sm-3">
-                        <?= $emailLabel ?>
+                        <?= $this->formLabel($form->get('email')) ?>
                     </div>
                     <div class="col-sm-9">
-                        <?= $this->formText($email) ?>
-                        <?= $this->formElementErrors($email) ?>
+                        <?= $this->formText($form->get('email')) ?>
+                        <?= $this->formElementErrors($form->get('email')) ?>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <div class="col-sm-3">
-                        <?= $passwordLabel ?>
+                        <?= $this->formLabel($form->get('password')) ?>
                     </div>
                     <div class="col-sm-9">
-                        <?= $this->formPassword($password) ?>
-                        <?= $this->formElementErrors($password) ?>
+                        <?= $this->formPassword($form->get('password')) ?>
+                        <?= $this->formElementErrors($form->get('password')) ?>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <div class="col-sm-3">
-                        <?= $confirmPasswordLabel ?>
+                        <?= $this->formLabel($form->get('confirmPassword')) ?>
                     </div>
                     <div class="col-sm-9">
-                        <?= $this->formPassword($confirmPassword) ?>
-                        <?= $this->formElementErrors($confirmPassword) ?>
+                        <?= $this->formPassword($form->get('confirmPassword')) ?>
+                        <?= $this->formElementErrors($form->get('confirmPassword')) ?>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <div class="col-sm-3">
-                        <?= $captchaLabel ?>
+                        <?= $this->formLabel($form->get('captcha')) ?>
                     </div>
                     <div class="col-sm-9 app-captcha">
                         <div class="captcha-box">
-                            <?= $this->formCaptcha($captcha) ?>
+                            <?= $this->formCaptcha($form->get('captcha')) ?>
                         </div>
-                        <?= $this->formElementErrors($captcha) ?>
+                        <?= $this->formElementErrors($form->get('captcha')) ?>
                     </div>
                 </div>
                 <br>
-                <div class="form-group">
-                    <div class="col-sm-12 col-sm-offset-3">
+                <div class="row form-group">
+                    <div class="col-sm-12 offset-sm-3">
                         <?= $this->formSubmit($form->get('submit')) ?>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ namespace Authentication;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\Crypt\Password\Bcrypt;
+use Application\Entity\User;
 
 return [
     'router' => [
@@ -62,10 +63,10 @@ return [
     'doctrine' => [
         'authentication' => [
             'orm_default' => [
-                'identity_class'      => 'Application\Entity\User',
+                'identity_class'      => User::class,
                 'identity_property'   => 'name',
                 'credential_property' => 'password',
-                'credential_callable' => function (\Application\Entity\User $user, $password) {
+                'credential_callable' => function (User $user, $password) {
                     if ((new Bcrypt())->verify($password, $user->getPassword())) {
                         return true;
                     } else {

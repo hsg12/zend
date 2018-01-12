@@ -51,7 +51,7 @@ div.container a.navbar-brand > img {
     line-height: 2; /* Vertically center the text there */
 }
 
-.home-active {
+a.home-active {
     color: #18BC9C !important;
 }
 
@@ -107,7 +107,15 @@ div.container a.navbar-brand > img {
 
 .registration-block {
     margin-top: 1px;
-    color: #93c54b;
+    color: #fff !important;
+}
+
+.registration-block a {
+    color: #fff;
+}
+
+.registration-block a:hover {
+    color: #18BC9C;
 }
 
 .captcha-box img {
@@ -124,4 +132,22 @@ div.container a.navbar-brand > img {
 
 label {
     margin-top: 6px;
+}
+
+#login-form input[type="checkbox"] {
+    margin-top: 9px !important;
+}
+
+.label-star {
+    color: #d00;
+}
+
+label.asterisk::after {
+    content: '*';
+    margin-left: 5px;
+    color: #d00;
+}
+
+form ul li {
+    color: #d00;
 }

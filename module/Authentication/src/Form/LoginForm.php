@@ -55,9 +55,9 @@ class LoginForm extends Form
         $this->add($password);
 
         $rememberMe = new Element\Checkbox('rememberMe');
-        //$rememberMe->setLabel('Remember Me');
         $rememberMe->setAttributes([
-            'id'       => 'rememberMe',
+            'id'    => 'rememberMe',
+            'type'  => 'checkbox',
         ]);
         $rememberMe->setOptions([
             'label' => 'Remember Me',
@@ -69,7 +69,7 @@ class LoginForm extends Form
 
         $submit = new Element\Submit('submit');
         $submit->setAttributes([
-            'class' => 'btn btn-default',
+            'class' => 'btn btn-dark',
             'value' => 'Submit',
         ]);
         $this->add($submit);

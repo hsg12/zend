@@ -1,6 +1,4 @@
 <?php
-$this->headScript()->appendScript('$(function(){$("ul.nav.navbar-nav.navbar-right li").eq(1).addClass("active");})');
-
 $headTitle = 'Login page';
 $this->headTitle($headTitle);
 
@@ -16,13 +14,11 @@ $form->setAttributes([
 ]);
 $form->prepare();
 ?>
-<br>
-<br>
 <div class="row">
     <div class="col-sm-12">
         <div class="well">
             <div class="row">
-                <div class="col-lg-10 col-md-11 col-sm-12">
+                <div class="col-lg-8 col-md-11 col-sm-12">
                 <?php
                     echo $this->form()->openTag($form);
                     echo '<fieldset><legend>Form for login</legend><br>';
@@ -68,14 +64,14 @@ $form->prepare();
                                     $formElement .= '</div>';
                                     break;
                                 case 'submit':
-                                    $formElement  = '<div class="col-sm-12 col-sm-offset-3">';
+                                    $formElement  = '<div class="col-sm-12 offset-sm-3">';
                                     $formElement .= $this->formSubmit($element);
                                     $formElement .= '</div>';
                                     break;
                             }
                         }
 
-                        echo '<div class="form-group">' . $label . $formElement . '</div>';
+                        echo '<div class="form-group row">' . $label . $formElement . '</div>';
                     }
                 ?>
                 <?php

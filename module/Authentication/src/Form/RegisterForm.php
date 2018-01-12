@@ -63,7 +63,7 @@ class RegisterForm extends Form
             'options' => [
                 'label' => 'Username',
                 'label_attributes' => [
-                    'class' => 'control-label',
+                    'class' => 'control-label asterisk',
                 ],
                 'min' => 2,
                 'max' => 100,
@@ -81,7 +81,7 @@ class RegisterForm extends Form
             'options' => [
                 'label' => 'Email',
                 'label_attributes' => [
-                    'class' => 'control-label',
+                    'class' => 'control-label asterisk',
                 ],
                 'min' => 2,
                 'max' => 100,
@@ -99,7 +99,7 @@ class RegisterForm extends Form
             'options' => [
                 'label' => 'Password',
                 'label_attributes' => [
-                    'class' => 'control-label',
+                    'class' => 'control-label asterisk',
                 ],
                 'min' => 2,
                 'max' => 100,
@@ -117,7 +117,7 @@ class RegisterForm extends Form
             'options' => [
                 'label' => 'Confirm Password',
                 'label_attributes' => [
-                    'class' => 'control-label',
+                    'class' => 'control-label asterisk',
                 ],
                 'min' => 2,
                 'max' => 100,
@@ -130,7 +130,7 @@ class RegisterForm extends Form
             'options' => [
                 'label' => 'Type the word',
                 'label_attributes' => [
-                    'class' => 'control-label',
+                    'class' => 'control-label asterisk',
                 ],
                 'captcha' => $this->getCaptchaImage($urlCaptcha),
             ],
@@ -140,7 +140,7 @@ class RegisterForm extends Form
             'name' => 'submit',
             'type' => 'submit',
             'attributes' => [
-                'class' => 'btn btn-default',
+                'class' => 'btn btn-dark',
                 'value' => 'Submit',
             ],
         ]);

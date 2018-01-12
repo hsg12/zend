@@ -29,7 +29,8 @@ class Module
     {
         return [
             'invokables' => [
-                'getYear' => View\Helper\GetYear::class,
+                'getYear'   => View\Helper\GetYear::class,
+                'setActive' => View\Helper\SetActive::class,
             ],
         ];
     }

@@ -56,8 +56,6 @@ class RegisterController extends AbstractActionController
                     return ['form' => $form];
                 }
 
-                $this->encryptLogin($user);
-
                 $cloneUser = clone $user; // to have not hashed password
 
                 $hash = (new Bcrypt())->create($user->getPassword());

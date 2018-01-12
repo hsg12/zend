@@ -30,7 +30,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
             <div class="container">
-                <a class="navbar-brand <?php if ($this->headTitle()->renderTitle() === 'Home') { echo 'home-active'; } ?>"
+                <a class="navbar-brand <?= $this->setActive($this, 'Home') ?>"
                    href="<?= $this->url('home') ?>"
                 >
                     SiteName
@@ -44,14 +44,14 @@
                     <div class="registration-block pull-right">
                         <?php if ($user) : ?>
                             <span>Hi
-                                <?= $this->decryptLogin($this->escapeHtml($user->getName())) ?>
+                                <?= $this->escapeHtml($user->getName()) ?>
                             </span>
                             &nbsp;&nbsp;|&nbsp;&nbsp;
                             <a href="/logout">Logout</a>
                         <?php else : ?>
-                            <a href="/register">Sign Up</a>
+                            <a href="/register" class="<?= $this->setActive($this, 'Registration page') ?>">Sign Up</a>
                             &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="/login">Login</a>
+                            <a href="/login" class="<?= $this->setActive($this, 'Login page') ?>">Login</a>
                         <?php endif; ?>
                     </div>
                 </div>

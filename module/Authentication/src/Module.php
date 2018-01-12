@@ -4,10 +4,6 @@ namespace Authentication;
 
 use Doctrine\ORM\EntityManager;
 use Zend\Authentication\AuthenticationService;
-use Application\Entity\User;
-use Zend\ModuleManager\ModuleManagerInterface;
-use Zend\Http;
-use Zend\Session\Container;
 use Zend\Session\SessionManager;
 use Zend\Mvc\MvcEvent;
 
@@ -85,51 +81,6 @@ class Module
                 },
             ],
         ];
-    }
-
-    public function getControllerPluginConfig()
-    {
-        return [
-            'invokables' => [
-                'cryptData'    => Controller\Plugin\CryptData::class,
-                'encryptLogin' => Controller\Plugin\EncryptLogin::class,
-            ],
-        ];
-    }
-
-    public function getViewHelperConfig()
-    {
-        return [
-            'invokables' => [
-                'decryptLogin' => View\Helper\DecryptLogin::class,
-            ],
-        ];
-    }
-
-    public function init(ModuleManagerInterface $moduleManager)
-    {
-        $moduleManager->getEventManager()->getSharedManager()->attach(
-            __NAMESPACE__,
-            'dispatch',
-            function ($e) {
-                $request = $e->getRequest();
-                if (! $request instanceof Http\Request) {
-                    return;
-                }
-
-                $translator = $e->getApplication()->getServiceManager()->get('translator');
-                $container = new Container('language');
-                $lang = $container->language;
-
-                if (! $lang) {
-                    $lang = 'en_US';
-                }
-
-                $translator->setLocale($lang);
-                $e->getViewModel()->setVariable('language', $lang);
-            },
-            100
-        );
     }
 
     public function onBootstrap(MvcEvent $event)
