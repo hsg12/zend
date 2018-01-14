@@ -3,13 +3,11 @@
 namespace Authentication\Form;
 
 use Zend\Form\Form;
-use Zend\Form\Element\Captcha;
 use Zend\Form\Element\Csrf;
-use Zend\Captcha\Image as CaptchaImage;
 
 class RegisterForm extends Form
 {
-    public function __construct($urlCaptcha = null)
+    public function __construct()
     {
         parent::__construct('register-form');
 
@@ -18,29 +16,10 @@ class RegisterForm extends Form
             'id' => 'form-register',
         ]);
 
-        $this->createElements($urlCaptcha);
+        $this->createElements();
     }
 
-    private function getCaptchaImage($urlCaptcha)
-    {
-        $dirData = './data';
-
-        $captchaImage = new CaptchaImage([
-            'font' => $dirData . '/fonts/arial.ttf',
-            'wordlen' => 6,
-            'width'   => 140,
-            'height'  => 60,
-            'dotNoiseLevel'  => 20,
-            'lineNoiseLevel' => 0,
-        ]);
-
-        $captchaImage->setImgDir($dirData . '/captcha');
-        $captchaImage->setImgUrl($urlCaptcha);
-
-        return $captchaImage;
-    }
-
-    private function createElements($urlCaptcha)
+    private function createElements()
     {
         $this->add([
             'name' => 'csrf',
@@ -126,14 +105,22 @@ class RegisterForm extends Form
 
         $this->add([
             'name' => 'captcha',
-            'type' => Captcha::class,
+            'type' => 'text',
+            'attributes' => [
+                'id'   => 'captcha',
+            ],
             'options' => [
-                'label' => 'Type the word',
+                'label' => 'Type the answer',
                 'label_attributes' => [
                     'class' => 'control-label asterisk',
+                    'required' => 'required',
                 ],
-                'captcha' => $this->getCaptchaImage($urlCaptcha),
             ],
+        ]);
+
+        $this->add([
+            'name' => 'captcha_real_value',
+            'type' => 'hidden',
         ]);
 
         $this->add([

@@ -72,28 +72,4 @@ class RegisterController extends AbstractActionController
 
         return new ViewModel(['form' => $form]);
     }
-
-    public function generateAction()
-    {
-        $response = $this->getResponse();
-        $response->getHeaders()->addHeaderLine('Content-Type', "image/png");
-        $id = $this->params('id', false);
-
-        if ($id) {
-            $image = './data/captcha/' . $id;
-
-            if (file_exists($image) !== false) {
-                $imageGetContent = @file_get_contents($image);
-
-                $response->setStatusCode(200);
-                $response->setContent($imageGetContent);
-
-                if (file_exists($image) == true) {
-                    unlink($image);
-                }
-            }
-        }
-
-        return $response;
-    }
 }

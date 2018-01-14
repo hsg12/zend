@@ -105,6 +105,54 @@ a.home-active {
     margin-top: 2px;
 }
 
+
+
+
+
+
+
+
+/* For Zend Form Error */
+form ul li {
+    color: #d00;
+}
+
+
+/* For Mandatory Fields */
+label.asterisk::after {
+    content: '*';
+    margin-left: 5px;
+    color: #d00;
+}
+
+
+/* For Label */
+label {
+    margin-top: 6px;
+}
+
+
+/* For login form checkbox */
+#login-form input[type="checkbox"] {
+    margin-top: 9px !important;
+}
+
+
+/* For Captcha */
+.captcha-box {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+}
+
+#captcha {
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    padding: 0 10px;
+    width: 100px;
+}
+
+
+/* For Application/view/layout/layout.phtml ( You can change this values of course) */
 .registration-block {
     margin-top: 1px;
     color: #fff !important;
@@ -116,38 +164,4 @@ a.home-active {
 
 .registration-block a:hover {
     color: #18BC9C;
-}
-
-.captcha-box img {
-    border: 1px solid #CED4DA;
-    border-radius: 3px;
-    margin-right: 20px;
-}
-
-.captcha-box input[name="captcha[input]"] {
-    border: 1px solid #CED4DA;
-    border-radius: 3px;
-    height: 37px;
-}
-
-label {
-    margin-top: 6px;
-}
-
-#login-form input[type="checkbox"] {
-    margin-top: 9px !important;
-}
-
-.label-star {
-    color: #d00;
-}
-
-label.asterisk::after {
-    content: '*';
-    margin-left: 5px;
-    color: #d00;
-}
-
-form ul li {
-    color: #d00;
 }

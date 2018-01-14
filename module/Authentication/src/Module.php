@@ -22,7 +22,7 @@ class Module
             'factories' => [
                 // forms
                 Form\RegisterForm::class => function ($container) {
-                    $form = new Form\RegisterForm('/register/captcha/');
+                    $form = new Form\RegisterForm();
                     $form->setInputFilter($container->get(Filter\RegisterFilter::class));
                     return $form;
                 },
@@ -79,6 +79,15 @@ class Module
                         $container->get('authStorage')
                     );
                 },
+            ],
+        ];
+    }
+
+    public function getViewHelperConfig()
+    {
+        return [
+            'invokables' => [
+                'captcha'   => View\Helper\RandomCaptcha::class,
             ],
         ];
     }

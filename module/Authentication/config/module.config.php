@@ -3,7 +3,6 @@
 namespace Authentication;
 
 use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
 use Zend\Crypt\Password\Bcrypt;
 use Application\Entity\User;
 
@@ -17,19 +16,6 @@ return [
                     'defaults' => [
                         'controller' => Controller\RegisterController::class,
                         'action'     => 'index',
-                    ],
-                ],
-                'may_terminate' => true,
-                'child_routes' => [
-                    'captcha_form_generate' => [
-                        'type' => Segment::class,
-                        'options' => [
-                            'route' => '/[captcha/[:id]]',
-                            'defaults' => [
-                                'controller' => Controller\RegisterController::class,
-                                'action' => 'generate',
-                            ],
-                        ],
                     ],
                 ],
             ],
