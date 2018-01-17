@@ -49,6 +49,7 @@ class Module
             'invokables' => [
                 'authStorage' => Model\AppAuthStorage::class,
                 'validationService' => Service\ValidationService::class,
+                'validationService' => Service\ValidationService::class,
             ],
         ];
     }

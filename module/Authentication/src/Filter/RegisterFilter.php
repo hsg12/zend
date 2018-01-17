@@ -81,26 +81,5 @@ class RegisterFilter extends InputFilter
                 ]
             ],
         ]);
-
-        $this->add([
-            'name' => 'captcha_real_value',
-            'required' => true,
-        ]);
-
-        $this->add([
-            'name' => 'captcha',
-            'required' => true,
-            'validators' => [
-                [
-                    'name' => 'identical',
-                    'options' => [
-                        'token' => 'captcha_real_value',
-                        'messages' => [
-                            \Zend\Validator\Identical::NOT_SAME => 'Captcha value is wrong',
-                        ],
-                    ],
-                ]
-            ],
-        ]);
     }
 }

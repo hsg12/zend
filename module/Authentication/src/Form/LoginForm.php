@@ -30,6 +30,7 @@ class LoginForm extends Form
 
         $name = new Element\Text('name');
         $name->setLabel('Username');
+        $name->setLabelAttributes(['class' => 'asterisk control-label col-sm-3']);
         $name->setAttributes([
             'class'    => 'form-control',
             'id'       => 'name',
@@ -43,6 +44,7 @@ class LoginForm extends Form
 
         $password = new Element\Password('password');
         $password->setLabel('Password');
+        $password->setLabelAttributes(['class' => 'asterisk control-label col-sm-3']);
         $password->setAttributes([
             'class'    => 'form-control',
             'id'       => 'password',
@@ -61,6 +63,7 @@ class LoginForm extends Form
         ]);
         $rememberMe->setOptions([
             'label' => 'Remember Me',
+            'label_attributes' => ['class' => 'control-label col-sm-3'],
             'use_hidden_element' => true,
             'checked_value' => 1,
             'unchecked_value' => 0,

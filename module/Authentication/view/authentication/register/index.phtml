@@ -55,20 +55,14 @@ $form->prepare();
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-sm-3">
-                        <?= $this->formLabel($form->get('captcha')) ?>
-                    </div>
-                    <div class="col-sm-9 app-captcha">
-                        <div class="captcha-box">
-                            <?php
-                            $appCaptcha = $this->captcha();
-                            echo $appCaptcha->str;
-                            $form->get('captcha_real_value')->setValue($appCaptcha->sum);
-                            echo $this->formHidden($form->get('captcha_real_value'));
-                            echo $this->formText($form->get('captcha'))
-                            ?>
-                        </div>
-                        <?= $this->formElementErrors($form->get('captcha')) ?>
+                    <div class="col-sm-12 offset-sm-3">
+                        <script src='https://www.google.com/recaptcha/api.js'></script>
+                        <div class="g-recaptcha" data-sitekey="6LdUCUEUAAAAALHF2Su0SySHBIHbxocVT1xHnBoN"></div>
+                        <?php if ($this->captchaMessage) : ?>
+                        <ul>
+                            <li class="color-red"><?= $this->captchaMessage ?></li>
+                        </ul>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <br>

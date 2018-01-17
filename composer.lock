@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a945f420b5d689116a005dbd593d5767",
+    "content-hash": "82ef3813d08c5c4ba50ec9879fead789",
     "packages": [
+        {
+            "name": "breyndotechse/recaptcha2",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BreyndotEchse/recaptcha2.git",
+                "reference": "cca4385c91bf6f85e4e790feca0dc58e115b4a93"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BreyndotEchse/recaptcha2/zipball/cca4385c91bf6f85e4e790feca0dc58e115b4a93",
+                "reference": "cca4385c91bf6f85e4e790feca0dc58e115b4a93",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0",
+                "zendframework/zend-captcha": "^2.2.3",
+                "zendframework/zend-form": "^2.2.3",
+                "zendframework/zend-http": "^2.2.3",
+                "zendframework/zend-i18n": "^2.2.3",
+                "zendframework/zend-view": "^2.2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5",
+                "squizlabs/php_codesniffer": "^2.3.1",
+                "zendframework/zend-servicemanager": "^2.7.5 || ^3.0.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ReCaptcha2\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "reCAPTCHA 2.0 (\"NoCaptcha\") Module for Zend Framework 2 and Zend Framework 3",
+            "homepage": "https://github.com/breyndotechse/recaptcha2",
+            "keywords": [
+                "ZendFramework",
+                "captcha",
+                "framework",
+                "nocaptcha",
+                "recaptcha",
+                "zend",
+                "zf2",
+                "zf3"
+            ],
+            "time": "2016-09-21T08:44:15+00:00"
+        },
         {
             "name": "container-interop/container-interop",
             "version": "1.2.0",
@@ -574,20 +625,20 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462"
+                "reference": "5527a48b7313d15261292c149e55e26eae771b0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e11d84c6e018beedd929cff5220969a3c6d1d462",
-                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/5527a48b7313d15261292c149e55e26eae771b0a",
+                "reference": "5527a48b7313d15261292c149e55e26eae771b0a",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0"
+                "php": "^7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2"
@@ -595,7 +646,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -637,7 +688,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2017-07-22T12:18:28+00:00"
+            "time": "2018-01-09T20:05:19+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -828,6 +879,68 @@
                 "orm"
             ],
             "time": "2017-12-20T00:38:15+00:00"
+        },
+        {
+            "name": "nocvp/zf3-php7-recaptcha-v2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nocvp/zf3-php7-recaptcha-v2.git",
+                "reference": "89ad91c660a104880e1897505376c8f948f07a70"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nocvp/zf3-php7-recaptcha-v2/zipball/89ad91c660a104880e1897505376c8f948f07a70",
+                "reference": "89ad91c660a104880e1897505376c8f948f07a70",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "zendframework/zend-captcha": "^2.5",
+                "zendframework/zend-form": "^2.8",
+                "zendframework/zend-http": "^2.5",
+                "zendframework/zend-servicemanager": "^3.0.3",
+                "zendframework/zend-view": "^2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zf3Php7Recaptcha\\": "src/"
+                },
+                "psr-0": {
+                    "Zf3Php7Recaptcha\\": "src/"
+                },
+                "classmap": [
+                    "./"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Lohmann",
+                    "email": "lars@browserlife.de",
+                    "homepage": "http://browserlife.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Semih Sarı",
+                    "email": "semihsari@gmail.com",
+                    "homepage": "http://noc.com.tr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "ReCaptcha v2.0 module for Zend Framework 3 (ZF3) and Php7",
+            "homepage": "https://github.com/nocvp/zf3-php7-recaptcha-v2",
+            "keywords": [
+                "PHP7",
+                "captcha",
+                "recaptcha",
+                "zf3"
+            ],
+            "time": "2016-05-29T18:51:29+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1158,6 +1271,50 @@
             "time": "2017-10-11T12:05:26+00:00"
         },
         {
+            "name": "xorock/zend-service-recaptcha-v2",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xorock/zend-service-recaptcha-v2.git",
+                "reference": "515bc537c53dde266e8ebf6bfcba44ac1beb1982"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xorock/zend-service-recaptcha-v2/zipball/515bc537c53dde266e8ebf6bfcba44ac1beb1982",
+                "reference": "515bc537c53dde266e8ebf6bfcba44ac1beb1982",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0",
+                "zendframework/zend-captcha": "^2.6",
+                "zendframework/zend-form": "^2.9",
+                "zendframework/zend-http": "^2.5",
+                "zendframework/zend-json": "^3.0",
+                "zendframework/zend-modulemanager": "^2.7",
+                "zendframework/zend-stdlib": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ZfServiceReCaptcha2\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Zend Framework 3 service for Google ReCaptcha v2",
+            "keywords": [
+                "captcha",
+                "form",
+                "http",
+                "recaptcha",
+                "zend",
+                "zf3"
+            ],
+            "time": "2016-11-05T07:58:38+00:00"
+        },
+        {
             "name": "zendframework/zend-authentication",
             "version": "2.5.3",
             "source": {
@@ -1400,16 +1557,16 @@
         },
         {
             "name": "zendframework/zend-component-installer",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-component-installer.git",
-                "reference": "ca728bb1fcff9b0e945ac472bf8d6031e25edf28"
+                "reference": "5e9beda3b81d29d4d080b110d67f8c8c44d93605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-component-installer/zipball/ca728bb1fcff9b0e945ac472bf8d6031e25edf28",
-                "reference": "ca728bb1fcff9b0e945ac472bf8d6031e25edf28",
+                "url": "https://api.github.com/repos/zendframework/zend-component-installer/zipball/5e9beda3b81d29d4d080b110d67f8c8c44d93605",
+                "reference": "5e9beda3b81d29d4d080b110d67f8c8c44d93605",
                 "shasum": ""
             },
             "require": {
@@ -1448,7 +1605,7 @@
                 "plugin",
                 "zf"
             ],
-            "time": "2017-11-06T22:50:20+00:00"
+            "time": "2018-01-11T15:03:06+00:00"
         },
         {
             "name": "zendframework/zend-config",
@@ -3483,6 +3640,58 @@
             "time": "2017-03-21T15:05:56+00:00"
         },
         {
+            "name": "zendframework/zendservice-recaptcha",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/ZendService_ReCaptcha.git",
+                "reference": "6c6877c07c8ac73b187911ea5d264a640b234361"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/ZendService_ReCaptcha/zipball/6c6877c07c8ac73b187911ea5d264a640b234361",
+                "reference": "6c6877c07c8ac73b187911ea5d264a640b234361",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "zendframework/zend-http": "^2.5.4",
+                "zendframework/zend-json": "^2.6.1 || ^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.0",
+                "zendframework/zend-coding-standard": "~1.0.0",
+                "zendframework/zend-config": "^2.0",
+                "zendframework/zend-validator": "^2.8.2"
+            },
+            "suggest": {
+                "zendframework/zend-validator": "~2.0, if using ReCaptcha's Mailhide API"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev",
+                    "dev-develop": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ZendService\\ReCaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "OOP wrapper for the ReCaptcha web service",
+            "homepage": "http://packages.zendframework.com/",
+            "keywords": [
+                "recaptcha",
+                "zf2"
+            ],
+            "time": "2017-02-09T21:38:25+00:00"
+        },
+        {
             "name": "zfcampus/zf-development-mode",
             "version": "3.1.0",
             "source": {
@@ -4334,16 +4543,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "b11c729f95109b56a0fe9650c6a63a0fcd8c439f"
+                "reference": "11c07feade1d65453e06df3b3b90171d6d982087"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/b11c729f95109b56a0fe9650c6a63a0fcd8c439f",
-                "reference": "b11c729f95109b56a0fe9650c6a63a0fcd8c439f",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/11c07feade1d65453e06df3b3b90171d6d982087",
+                "reference": "11c07feade1d65453e06df3b3b90171d6d982087",
                 "shasum": ""
             },
             "require": {
@@ -4394,7 +4603,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-12-22T14:50:35+00:00"
+            "time": "2018-01-12T06:34:42+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -5107,7 +5316,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "zendframework/zend-component-installer": 20
+        "zendframework/zend-component-installer": 20,
+        "nocvp/zf3-php7-recaptcha-v2": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

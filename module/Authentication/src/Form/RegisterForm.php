@@ -5,6 +5,15 @@ namespace Authentication\Form;
 use Zend\Form\Form;
 use Zend\Form\Element\Csrf;
 
+use Zend\Form\Element\Captcha;
+//use ZfServiceReCaptcha2\Captcha\ReCaptcha2;
+
+
+use Zend\Form\Element;
+use ReCaptcha2\Captcha\ReCaptcha2;
+
+use Zend\Captcha\ReCaptcha;
+
 class RegisterForm extends Form
 {
     public function __construct()
@@ -103,25 +112,19 @@ class RegisterForm extends Form
             ],
         ]);
 
-        $this->add([
-            'name' => 'captcha',
-            'type' => 'text',
-            'attributes' => [
-                'id'   => 'captcha',
-            ],
-            'options' => [
-                'label' => 'Type the answer',
-                'label_attributes' => [
-                    'class' => 'control-label asterisk',
-                    'required' => 'required',
-                ],
-            ],
-        ]);
 
-        $this->add([
-            'name' => 'captcha_real_value',
-            'type' => 'hidden',
-        ]);
+
+
+
+
+
+
+
+
+
+
+
+
 
         $this->add([
             'name' => 'submit',

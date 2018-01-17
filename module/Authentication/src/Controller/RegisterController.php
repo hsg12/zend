@@ -32,6 +32,8 @@ class RegisterController extends AbstractActionController
 
     public function indexAction()
     {
+        $captchaMessage = '';
+
         if ($this->identity()) {
             return $this->redirect()->toRoute('home');
             die;
@@ -42,18 +44,26 @@ class RegisterController extends AbstractActionController
 
         $form->setHydrator(new DoctrineObject($this->entityManager));
         $form->bind($user);
+        $form->setValidationGroup('csrf', 'name', 'email', 'password', 'confirmPassword');
 
         $request = $this->getRequest();
         if ($request->isPost()) {
             $form->setData($request->getPost());
 
-            if ($form->isValid()) {
+            $captchaResult = $this->checkCaptcha($request->getPost('g-recaptcha-response'));
+            $captchaResult = json_decode($captchaResult)->success;
+
+            if (! $captchaResult) {
+                $captchaMessage = 'Please click on the reCAPTCHA box';
+            }
+
+            if ($form->isValid() && $captchaResult) {
                 $repository = $this->entityManager->getRepository(User::class);
 
                 if ($this->validationService->isObjectExists($repository, $user->getName(), ['name'])) {
                     $nameExists = 'User with name ' . $user->getName() . ' exists already';
                     $form->get('name')->setMessages(['nameExists' => $nameExists]);
-                    return ['form' => $form];
+                    return new ViewModel(['form' => $form,]);
                 }
 
                 $cloneUser = clone $user; // to have not hashed password
@@ -70,6 +80,31 @@ class RegisterController extends AbstractActionController
             }
         }
 
-        return new ViewModel(['form' => $form]);
+        return new ViewModel([
+            'form' => $form,
+            'captchaMessage' => $captchaMessage,
+        ]);
+    }
+
+    private function checkCaptcha($recaptcha)
+    {
+        $secret = '6LdUCUEUAAAAAPZ1AT8fw_Jz26Srg405tFzJBghJ';
+        $url = "https://www.google.com/recaptcha/api/siteverify";
+
+        $data = [
+            'secret' => $secret,
+            'response' => $recaptcha,
+            'remoteip' => $_SERVER['REMOTE_ADDR'],
+        ];
+
+        $verify = curl_init();
+        curl_setopt($verify, CURLOPT_URL, $url);
+        curl_setopt($verify, CURLOPT_POST, true);
+        curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($verify);
+
+        return $response;
     }
 }

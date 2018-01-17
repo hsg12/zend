@@ -32,15 +32,7 @@ $form->prepare();
                         $attributes = $element->getAttributes();
 
                         if ($element->getLabel()) {
-                            $element->setLabelAttributes([
-                                'class' => 'control-label col-sm-3',
-                            ]);
-
-                            if (isset($attributes['required']) && $attributes['required'] == 'required') {
-                                $element->setLabel($element->getLabel() . ' *');
-                            }
                             $label = $this->formLabel($element);
-                            $label = str_replace('*', '<strong class="label-star">*</strong>', $label);
                         }
 
                         if (isset($attributes['type'])) {

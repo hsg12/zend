@@ -28,7 +28,11 @@
         "doctrine/doctrine-orm-module": "^1.0.9",
         "zendframework/zend-captcha": "^2.7",
         "zendframework/zend-crypt": "^3.2",
-        "zendframework/zend-json": "^3.1"
+        "zendframework/zend-json": "^3.1",
+        "zendframework/zendservice-recaptcha": "^3.0",
+        "xorock/zend-service-recaptcha-v2": "^0.1.0",
+        "breyndotechse/recaptcha2": "^1.0",
+        "nocvp/zf3-php7-recaptcha-v2": "dev-master"
     },
     "autoload": {
         "psr-4": {
